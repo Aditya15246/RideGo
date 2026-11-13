@@ -7,3 +7,5 @@ const driverController = require("../controllers/driverController");
 const driveRouter = Router()
 
 driveRouter.post("/profile",authMiddleware,roleMiddleware("driver"),driverController.createDriverProfile)
+driveRouter.get("/profile",authMiddleware,roleMiddleware("driver"),driverController.getDriverProfile)
+driverRouter.patch("/profile",authMiddleware,roleMiddleware("driver"),driverController.updateDriverProfile)

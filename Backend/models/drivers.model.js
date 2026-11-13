@@ -36,21 +36,29 @@ const driverSchema = new mongoose.Schema({
     default: false
   },
 
-  isAvailable: {
-    type: Boolean,
-    default: false
+  availabilityStatus: {
+    type: String,
+    enum: ["offline", "available", "on_ride"],
+    default: "offline"
   },
-  currentLocation:{
-    type:{
+
+  currentLocation: {
+    type: {
       type: String,
       enum: ["Point"],
       default: "Point"
     },
-    coordinates:{
+    coordinates: {
       type: [Number],
-      default: [0,0]
+      default: undefined
     }
   },
+
+  lastLocationUpdateAt: {
+    type: Date,
+    default: null
+  },
+  
   rating: {
       type: Number,
       default: 0,

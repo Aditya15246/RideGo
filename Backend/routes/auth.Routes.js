@@ -12,6 +12,6 @@ authRouter.post("/register", authController.register);
 authRouter.post("/login", authController.login);
 
 /* GET /api/auth/get-me */
-authRouter.get("/get-me", AuthMiddle,authController.getme);
+authRouter.get("/get-me", AuthMiddle,authController.getMe);
 
 module.exports = authRouter;
